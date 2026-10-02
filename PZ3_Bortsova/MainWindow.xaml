@@ -1,0 +1,21 @@
+﻿<Window x:Class="PZ3_Bortsova.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PZ3_Bortsova"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Icon="/Resources/5c8ce1b64785f9bda8cd473aaa7b98e6.ico">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="DeepPink">
+            <Image Width="45" Height="45" HorizontalAlignment="Left" Margin="5" Source="/Resources/3c40b0688e37286b278e32411accd53e.jpg"/>
+            <Button x:Name="btnBack" Content="Назад" HorizontalAlignment="Left" Margin="657,0,0,0" VerticalAlignment="Center" Click="btnBack_Click"/>
+        </Grid>
+        <Frame x:Name="FrmMain" Grid.Row="1" NavigationUIVisibility="Hidden" ContentRendered="FrmMain_ContentRendered"/>
+    </Grid>
+</Window>
