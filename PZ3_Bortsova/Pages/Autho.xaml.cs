@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PasswordHashing;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,14 +23,40 @@ namespace PZ3_Bortsova.Pages
             InitializeComponent();
         }
 
-        private void btnEnterGuests_Click(object sender, RoutedEventArgs e)
+        private void btnRegistr_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Client());
+            NavigationService.Navigate(new Registration());
         }
 
         private void btnEnter_Click(object sender, RoutedEventArgs e)
         {
+            string login = txtbLogin.Text.Trim();
+            string password = pswbPassword.Password.Trim();
 
+            if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Пожалуйста, введите логин и пароль.", "Внимание");
+                return;
+            }
+            try
+            {
+                string hashedPassword = PasswordHasher.HashPassword(password);
+                var context = Helper.GetContext();
+                var user = context.Users.FirstOrDefault(u => u.Login == login && u.Password == hashedPassword);
+                if (user != null)
+                {
+                    MessageBox.Show("Вы успешно вошли. Добро пожаловать", "Успех");
+                    NavigationService.Navigate(new Client());
+                }
+                else
+                {
+                    MessageBox.Show("Неверный логин или пароль.", "Ошибка");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка подключения к БД: " + ex.Message, "Ошибка");
+            }
         }
     }
 }
