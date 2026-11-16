@@ -35,6 +35,7 @@ namespace PZ3_Bortsova
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             FrmMain.GoBack();
+
         }
     }
 }

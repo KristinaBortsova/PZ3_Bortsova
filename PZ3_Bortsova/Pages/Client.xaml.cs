@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PZ3_Bortsova.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,7 @@ namespace PZ3_Bortsova.Pages
 {
     public partial class Client : Page
     {
-        public Client()
+        public Client(Users user, string role)
         {
             InitializeComponent();
         }

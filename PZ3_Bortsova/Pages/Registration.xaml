@@ -15,6 +15,7 @@
             <ColumnDefinition Width="260"/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image Source="/Resources/3c40b0688e37286b278e32411accd53e.jpg" Width="92" Height="79" Margin="0,0,0,20"/>
             <TextBlock Text="Логин:"/>
             <TextBox x:Name="txtbLogin"/>
             <TextBlock Text="Пароль:"/>

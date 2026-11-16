@@ -6,27 +6,26 @@
       xmlns:local="clr-namespace:PZ3_Bortsova.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Autho" Background="White">
+      Title="Autho" Background="White"
+      Loaded="ALoaded">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="260"/>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="260"/>
-        </Grid.ColumnDefinitions>
-        <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Content="Авторизация" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20" Margin="0,0,0,10"/>
+            <Image Source="/Resources/3c40b0688e37286b278e32411accd53e.jpg" Width="92" Height="79" Margin="0,0,0,20"/>
             <TextBlock Text="Логин:"/>
-            <TextBox x:Name="txtbLogin"/>
+            <TextBox x:Name="txtbLogin" Width="250"/>
             <TextBlock Text="Пароль:"/>
-            <PasswordBox x:Name="pswbPassword"/>
-            <TextBlock Visibility="Hidden" x:Name="txtBlockCaptcha" Text="Капча:"/>
-            <TextBox Visibility="Hidden" x:Name="txtboxCaptcha"/>
+            <PasswordBox x:Name="pswbPassword" Width="250"/>
+            <TextBlock x:Name="txtBlockCaptcha" Text="Капча:" Visibility="Hidden"/>
+            <TextBox x:Name="txtboxCaptcha"  Visibility="Hidden" Width="250"/>
+            <TextBox x:Name="txtboxCaptchaVvod" Visibility="Hidden" Width="250"/>
+
             <TextBlock HorizontalAlignment="Center" Visibility="Hidden" x:Name="txtBlockTimer"/>
-            <StackPanel Orientation="Horizontal" Height="80" HorizontalAlignment="Center">
-                <Button x:Name="btnRegistr" Margin="5,15,5,5" Content="Зарегистрироваться" Click="btnRegistr_Click" FontSize="9"/>
-                <Button x:Name="btnEnter" Margin="5,15,5,5" Content="Войти" Click="btnEnter_Click"/>
-                
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                <Button x:Name="btnRegistr" Content="Зарегистрироваться" Click="btnRegistr_Click" FontSize="11" Margin="5"/>
+                <Button x:Name="btnEnter" Content="Войти" Click="btnEnter_Click" Margin="5"/>
             </StackPanel>
+
         </StackPanel>
-        <Label Grid.Column="1" Content="Авторизация" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
     </Grid>
 </Page>
